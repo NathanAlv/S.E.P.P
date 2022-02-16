@@ -1,0 +1,372 @@
+@font-face {
+    font-family: "padrao";
+    src: url(../fonts/CormorantGaramond-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: "secundaria";
+    src: url(../fonts/CormorantGaramond-SemiBoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "rodape";
+  src:url(../fonts/ShadowsIntoLight-Regular.ttf);
+}
+
+#rodape{
+    text-align: center;
+    font-family: "padrao";
+    font-size: 115%
+}
+
+
+#resumo{
+    text-align: center;
+    font-family: "secundaria";
+    font-size: 150%;
+    padding: 5%;
+}
+
+#cabecalho {
+    text-align: center;
+    padding: 30px 0px 10px 0px;
+}
+
+#cabecalho h1 {
+    font-family: "padrao";
+    color: black;
+    font-size: 400%;
+}
+
+#galeria {
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.foto {
+    flex: 33%;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.foto img {
+    width: 80%;
+}
+
+
+
+
+:root {
+    --imagem-hero: url(../img/capa.jpg);
+}
+
+body {
+    margin: 0;
+}
+
+#menu {
+    background-color: black;
+    padding: 20px;
+    font-family: "padrao";
+    display: flex;
+}
+
+#menu a {
+    color: ivory;
+    text-decoration: none;
+}
+
+#menu a:hover {
+    color: ivory;
+}
+
+
+#menu {
+    vertical-align: middle;
+}
+
+#titulo {
+    font-size: 200%;
+}
+
+#menuDesktop {
+    list-style: none;
+    font-size: 150%;
+    margin: 0 0 0 auto;
+}
+
+#menuDesktop li {
+    display: inline;
+    margin-left: 30px;
+}
+
+#menuResponsivo {
+    display: none;
+}
+
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--imagem-hero);
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#textoHero {
+    text-align: center;
+    color: white;
+    font-family: "padrao";
+    text-shadow: 2px 2px black;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#tituloHero {
+    font-size: 500%;
+    margin: 0;
+}
+
+
+#container {
+    padding: 20px;
+}
+
+#slogan {
+    font-family: "secundaria";
+    text-align: center;
+    font-size: 300%;
+}
+
+.game {
+    display: flex;
+    background-color:black;
+    padding: 30px 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.game:hover {
+    opacity: 1;
+}
+
+.game:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.game:nth-child(even) .descricao {
+    padding-left: 25px;
+}
+
+.game:nth-child(even) .descricao h1,
+.game:nth-child(even) .fonte {
+    text-align: left;
+}
+
+.fotoGame {
+    position: relative;
+    width: 40%;
+    text-align: center;
+    left: -1000px;
+    animation: deslizarParaEsquerda1 1s;
+    animation-timing-function: ease-out;
+    transition: transform 1s;
+}
+
+.game:hover .fotoGame {
+    animation: deslizarParaDireita1 1s;
+    animation-timing-function: ease-out;
+    left: 0;
+}
+
+.game:nth-child(even) .fotoGame {
+    left: 1000px;
+    animation: deslizarParaDireita2 1s;
+}
+
+.game:nth-child(even):hover .fotoGame {
+    left: 0px;
+    animation: deslizarParaEsquerda2 1s;
+}
+
+.fotoGame img {
+    width: 90%;
+    border-radius: 10px;
+}
+
+.descricao {
+    position: relative;
+    width: 60%;
+    animation: deslizarParaDireita2 1s;
+    animation-timing-function: ease-out;
+    transition: transform 1s;
+}
+
+.game:nth-child(even) .descricao {
+    animation: deslizarParaEsquerda1 1s;
+    left: -1000px;
+}
+
+.game:nth-child(even):hover .descricao {
+    animation: deslizarParaDireita1 1s;
+    left: 0px;
+}
+
+.game:hover .descricao {
+    animation: deslizarParaEsquerda2 1s;
+    animation-timing-function: ease-out;
+}
+
+.descricao {
+    width: 95%;
+}
+
+.descricao h1 {
+    color: ivory;
+    font-family: "titulo";
+    text-align: right;
+}
+
+.textoDescricao {
+    color: ivory;
+    font-family: "secundaria";
+    text-align: justify;
+    font-size: 120%;
+}
+
+.fonte {
+    color: ivory;
+    font-family: "secundaria";
+    text-align: right;
+}
+
+.foto img{
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    :root{
+        --imagem-hero: url(../img/bonfire.jpg);
+    }
+
+    #galeria {
+        flex-direction: column;
+    }
+
+    .foto img {
+        border-radius: 20px;
+        width: 100%;
+    }
+
+
+    .game {
+        display:block;
+        text-align: justify;
+        background-color:black;
+        padding: 30px 10px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        opacity: 100;
+        transition:none;
+    }
+    
+    .game:hover {
+        opacity: 100;
+    }
+    
+    .game:nth-child(even) {
+        flex-direction:none;
+    }
+    
+    .game:nth-child(even) .descricao {
+        padding-left: none;
+    }
+    
+    .game:nth-child(even) .descricao h1,
+    .game:nth-child(even) .fonte {
+        text-align: center;
+    }
+    
+    .fotoGame {
+        display: block;
+        width: 100%;
+        left: 0px;
+        animation: none;
+        animation-timing-function: none;
+        transition:none;
+    }
+    
+    .game:hover .fotoGame {
+        display: block;
+        animation:none;
+        animation-timing-function:none;
+        left: 0;
+    }
+    
+    .game:nth-child(even) .fotoGame {
+        display: block;
+        left: 0px;
+        animation:none;
+    }
+    
+    .game:nth-child(even):hover .fotoGame {
+        display: block;
+        left: 0px;
+        animation: none;
+    }
+    
+    .fotoGame img {
+        display: block;
+        position: center;
+        width: 100%;
+        border-radius: 30px;
+    }
+    
+    .descricao {
+        display: block;
+        width: 60%;
+        animation:none;
+        animation-timing-function: none;
+        transition: none;
+    }
+    
+    .game:nth-child(even) .descricao {
+        display: block;
+        animation:none;
+        left: 0px;
+    }
+    
+    .game:nth-child(even):hover .descricao {
+        display: block;
+        animation:none;
+        left: 0px;
+    }
+    
+    .game:hover .descricao {
+        display: block;
+        animation: none;
+        animation-timing-function:none;
+    }
+    .descricao {
+        display: block;
+        width: 55%;
+        position: center;
+    }
+    .textoDescricao {
+        position: center;
+        display: block;
+        color: ivory;
+        font-family: "secundaria";
+        text-align: justify;
+        font-size: 120%;
+    }
+}
